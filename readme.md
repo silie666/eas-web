@@ -1,0 +1,3 @@
+# 教务管理系统前端
+## 根据api文档生成对应的接口文件和类型
+> docker run --rm -v "${PWD}/generator:/local" -v "${PWD}/src/services:/services" openapitools/openapi-generator-cli generate -t /local/templates -i "http://127.0.0.1:4523/export/openapi?projectId=xxxxxxx&version=2.0" -g typescript-axios -o /services --additional-properties=withSeparateModelsAndApi=true,modelPackage=model,apiPackage=api,useSingleRequestParameter=true,supportsES6=true
