@@ -48,11 +48,11 @@ export function useCourseList() {
       }
     },
     {
-      label: $t("日期"),
+      label: $t("上课日期"),
       prop: "date",
       minWidth: 130,
-      search: {
-        type: "dateRange"
+      cellRenderer: (scope): any => {
+        return scope.row.date.split("T")[0].substring(0, 7);
       }
     },
     {

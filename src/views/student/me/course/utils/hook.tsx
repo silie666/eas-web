@@ -27,7 +27,7 @@ export function useCourseList() {
       }
     },
     {
-      label: $t("日期"),
+      label: $t("上课日期"),
       prop: "course.date",
       minWidth: 130,
       search: {

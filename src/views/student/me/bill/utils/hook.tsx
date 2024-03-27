@@ -74,7 +74,7 @@ export function useBillList() {
                 courseBillId: row.id.toString(),
                 patchStudentApiCourseBillPayRequest: form
               });
-              message(`${$t("支付成功")}`, {
+              message(`${$t("已发起支付，请等待结果")}`, {
                 type: "success"
               });
               done();

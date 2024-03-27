@@ -32,11 +32,11 @@ defineExpose({ ruleFormRef, form });
     <el-form-item :label="$t('课程内容')" prop="content">
       <el-input v-model="form.content" type="textarea" />
     </el-form-item>
-    <el-form-item :label="`${$t('日期')}`" prop="date">
+    <el-form-item :label="`${$t('上课日期')}`" prop="date">
       <el-date-picker
         v-model="form.date"
-        type="date"
-        :placeholder="`${$t('请选择')} ${$t('日期')}`"
+        type="month"
+        :placeholder="`${$t('请选择')} ${$t('上课日期')}`"
         value-format="YYYY-MM-DDTHH:mm:ssZ"
       />
     </el-form-item>
