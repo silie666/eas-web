@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import { $t } from "@/plugins/i18n-setup";
-import { PatchTeacherApiCourseRequest, CourseCourse, BasicSimpleApi } from "@/services";
+import { PatchApiTeacherApiCourseRequest, CourseCourse, BasicSimpleApi } from "@/services";
 import TySelect from "@/components/TySelect/index.vue";
 import { useOptions } from "@/views/hooks";
 
@@ -9,7 +9,7 @@ const props = defineProps<{
   row?: CourseCourse;
 }>();
 
-const form = reactive<PatchTeacherApiCourseRequest>({
+const form = reactive<PatchApiTeacherApiCourseRequest>({
   name: props?.row?.name ?? "",
   content: props?.row?.content ?? "",
   date: props?.row?.date ?? "",
@@ -17,7 +17,7 @@ const form = reactive<PatchTeacherApiCourseRequest>({
   student_ids: props?.row?.student_ids ?? []
 });
 
-const studentList = useOptions(new BasicSimpleApi().getCommonApiStudents, "id");
+const studentList = useOptions(new BasicSimpleApi().getApiCommonApiStudents, "id");
 
 const ruleFormRef = ref();
 

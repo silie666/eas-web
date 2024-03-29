@@ -38,8 +38,8 @@ export const BasicSimpleApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiCourses: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/common-api/courses`;
+        getApiCommonApiCourses: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/common-api/courses`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -73,8 +73,8 @@ export const BasicSimpleApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiStudents: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/common-api/students`;
+        getApiCommonApiStudents: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/common-api/students`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -118,10 +118,10 @@ export const BasicSimpleApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCommonApiCourses(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<BasicCourse>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getCommonApiCourses(authorization, options);
+        async getApiCommonApiCourses(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<BasicCourse>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiCommonApiCourses(authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['BasicSimpleApi.getCommonApiCourses']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['BasicSimpleApi.getApiCommonApiCourses']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -131,10 +131,10 @@ export const BasicSimpleApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCommonApiStudents(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<BasicStudent>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getCommonApiStudents(authorization, options);
+        async getApiCommonApiStudents(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<BasicStudent>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiCommonApiStudents(authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['BasicSimpleApi.getCommonApiStudents']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['BasicSimpleApi.getApiCommonApiStudents']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -150,50 +150,50 @@ export const BasicSimpleApiFactory = function (configuration?: Configuration, ba
         /**
          * 
          * @summary 课程列表
-         * @param {BasicSimpleApiGetCommonApiCoursesRequest} requestParameters Request parameters.
+         * @param {BasicSimpleApiGetApiCommonApiCoursesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiCourses(requestParameters: BasicSimpleApiGetCommonApiCoursesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<BasicCourse>> {
-            return localVarFp.getCommonApiCourses(requestParameters.authorization, options).then((request) => request(axios, basePath));
+        getApiCommonApiCourses(requestParameters: BasicSimpleApiGetApiCommonApiCoursesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<BasicCourse>> {
+            return localVarFp.getApiCommonApiCourses(requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 学生列表
-         * @param {BasicSimpleApiGetCommonApiStudentsRequest} requestParameters Request parameters.
+         * @param {BasicSimpleApiGetApiCommonApiStudentsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiStudents(requestParameters: BasicSimpleApiGetCommonApiStudentsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<BasicStudent>> {
-            return localVarFp.getCommonApiStudents(requestParameters.authorization, options).then((request) => request(axios, basePath));
+        getApiCommonApiStudents(requestParameters: BasicSimpleApiGetApiCommonApiStudentsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<BasicStudent>> {
+            return localVarFp.getApiCommonApiStudents(requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * Request parameters for getCommonApiCourses operation in BasicSimpleApi.
+ * Request parameters for getApiCommonApiCourses operation in BasicSimpleApi.
  * @export
- * @interface BasicSimpleApiGetCommonApiCoursesRequest
+ * @interface BasicSimpleApiGetApiCommonApiCoursesRequest
  */
-export interface BasicSimpleApiGetCommonApiCoursesRequest {
+export interface BasicSimpleApiGetApiCommonApiCoursesRequest {
     /**
      * 授权
      * @type {string}
-     * @memberof BasicSimpleApiGetCommonApiCourses
+     * @memberof BasicSimpleApiGetApiCommonApiCourses
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for getCommonApiStudents operation in BasicSimpleApi.
+ * Request parameters for getApiCommonApiStudents operation in BasicSimpleApi.
  * @export
- * @interface BasicSimpleApiGetCommonApiStudentsRequest
+ * @interface BasicSimpleApiGetApiCommonApiStudentsRequest
  */
-export interface BasicSimpleApiGetCommonApiStudentsRequest {
+export interface BasicSimpleApiGetApiCommonApiStudentsRequest {
     /**
      * 授权
      * @type {string}
-     * @memberof BasicSimpleApiGetCommonApiStudents
+     * @memberof BasicSimpleApiGetApiCommonApiStudents
      */
     readonly authorization?: string
 }
@@ -208,25 +208,25 @@ export class BasicSimpleApi extends BaseAPI {
     /**
      * 
      * @summary 课程列表
-     * @param {BasicSimpleApiGetCommonApiCoursesRequest} requestParameters Request parameters.
+     * @param {BasicSimpleApiGetApiCommonApiCoursesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BasicSimpleApi
      */
-    public getCommonApiCourses(requestParameters: BasicSimpleApiGetCommonApiCoursesRequest = {}, options?: RawAxiosRequestConfig) {
-        return BasicSimpleApiFp(this.configuration).getCommonApiCourses(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public getApiCommonApiCourses(requestParameters: BasicSimpleApiGetApiCommonApiCoursesRequest = {}, options?: RawAxiosRequestConfig) {
+        return BasicSimpleApiFp(this.configuration).getApiCommonApiCourses(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 学生列表
-     * @param {BasicSimpleApiGetCommonApiStudentsRequest} requestParameters Request parameters.
+     * @param {BasicSimpleApiGetApiCommonApiStudentsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BasicSimpleApi
      */
-    public getCommonApiStudents(requestParameters: BasicSimpleApiGetCommonApiStudentsRequest = {}, options?: RawAxiosRequestConfig) {
-        return BasicSimpleApiFp(this.configuration).getCommonApiStudents(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public getApiCommonApiStudents(requestParameters: BasicSimpleApiGetApiCommonApiStudentsRequest = {}, options?: RawAxiosRequestConfig) {
+        return BasicSimpleApiFp(this.configuration).getApiCommonApiStudents(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -24,7 +24,7 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, ope
 // @ts-ignore
 import { CourseCourseBill1 } from '../model';
 // @ts-ignore
-import { PatchTeacherApiCourseBillRequest } from '../model';
+import { PatchApiTeacherApiCourseBillRequest } from '../model';
 /**
  * CourseCourseBillApi - axios parameter creator
  * @export
@@ -39,10 +39,10 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteTeacherApiCourseBill: async (courseBillId: number, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteApiTeacherApiCourseBill: async (courseBillId: number, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'courseBillId' is not null or undefined
-            assertParamExists('deleteTeacherApiCourseBill', 'courseBillId', courseBillId)
-            const localVarPath = `/teacher-api/course-bills/{courseBillId}`
+            assertParamExists('deleteApiTeacherApiCourseBill', 'courseBillId', courseBillId)
+            const localVarPath = `/api/teacher-api/course-bills/{courseBillId}`
                 .replace(`{${"courseBillId"}}`, encodeURIComponent(String(courseBillId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -78,10 +78,10 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTeacherApiCourseBill: async (courseBillId: number, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getApiTeacherApiCourseBill: async (courseBillId: number, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'courseBillId' is not null or undefined
-            assertParamExists('getTeacherApiCourseBill', 'courseBillId', courseBillId)
-            const localVarPath = `/teacher-api/course-bills/{courseBillId}`
+            assertParamExists('getApiTeacherApiCourseBill', 'courseBillId', courseBillId)
+            const localVarPath = `/api/teacher-api/course-bills/{courseBillId}`
                 .replace(`{${"courseBillId"}}`, encodeURIComponent(String(courseBillId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -119,8 +119,8 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTeacherApiCourseBills: async (page?: number, perPage?: number, status?: string, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/teacher-api/course-bills`;
+        getApiTeacherApiCourseBills: async (page?: number, perPage?: number, status?: string, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/teacher-api/course-bills`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -164,14 +164,14 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
          * @summary 账单-账单管理-账单更新
          * @param {string} courseBillId 
          * @param {string} [authorization] 授权
-         * @param {PatchTeacherApiCourseBillRequest} [patchTeacherApiCourseBillRequest] 
+         * @param {PatchApiTeacherApiCourseBillRequest} [patchApiTeacherApiCourseBillRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchTeacherApiCourseBill: async (courseBillId: string, authorization?: string, patchTeacherApiCourseBillRequest?: PatchTeacherApiCourseBillRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        patchApiTeacherApiCourseBill: async (courseBillId: string, authorization?: string, patchApiTeacherApiCourseBillRequest?: PatchApiTeacherApiCourseBillRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'courseBillId' is not null or undefined
-            assertParamExists('patchTeacherApiCourseBill', 'courseBillId', courseBillId)
-            const localVarPath = `/teacher-api/course-bills/{courseBillId}`
+            assertParamExists('patchApiTeacherApiCourseBill', 'courseBillId', courseBillId)
+            const localVarPath = `/api/teacher-api/course-bills/{courseBillId}`
                 .replace(`{${"courseBillId"}}`, encodeURIComponent(String(courseBillId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -195,7 +195,7 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(patchTeacherApiCourseBillRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(patchApiTeacherApiCourseBillRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -211,10 +211,10 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchTeacherApiCourseBillSend: async (courseBillId: string, authorization?: string, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        patchApiTeacherApiCourseBillSend: async (courseBillId: string, authorization?: string, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'courseBillId' is not null or undefined
-            assertParamExists('patchTeacherApiCourseBillSend', 'courseBillId', courseBillId)
-            const localVarPath = `/teacher-api/course-bills/{courseBillId}/send`
+            assertParamExists('patchApiTeacherApiCourseBillSend', 'courseBillId', courseBillId)
+            const localVarPath = `/api/teacher-api/course-bills/{courseBillId}/send`
                 .replace(`{${"courseBillId"}}`, encodeURIComponent(String(courseBillId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -249,12 +249,12 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary 账单-账单管理-账单添加
          * @param {string} [authorization] 授权
-         * @param {PatchTeacherApiCourseBillRequest} [patchTeacherApiCourseBillRequest] 
+         * @param {PatchApiTeacherApiCourseBillRequest} [patchApiTeacherApiCourseBillRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postTeacherApiCourseBills: async (authorization?: string, patchTeacherApiCourseBillRequest?: PatchTeacherApiCourseBillRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/teacher-api/course-bills`;
+        postApiTeacherApiCourseBills: async (authorization?: string, patchApiTeacherApiCourseBillRequest?: PatchApiTeacherApiCourseBillRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/teacher-api/course-bills`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -277,7 +277,7 @@ export const CourseCourseBillApiAxiosParamCreator = function (configuration?: Co
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(patchTeacherApiCourseBillRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(patchApiTeacherApiCourseBillRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -302,10 +302,10 @@ export const CourseCourseBillApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteTeacherApiCourseBill(courseBillId: number, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTeacherApiCourseBill(courseBillId, authorization, options);
+        async deleteApiTeacherApiCourseBill(courseBillId: number, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteApiTeacherApiCourseBill(courseBillId, authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.deleteTeacherApiCourseBill']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.deleteApiTeacherApiCourseBill']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -316,10 +316,10 @@ export const CourseCourseBillApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTeacherApiCourseBill(courseBillId: number, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CourseCourseBill1>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getTeacherApiCourseBill(courseBillId, authorization, options);
+        async getApiTeacherApiCourseBill(courseBillId: number, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CourseCourseBill1>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiTeacherApiCourseBill(courseBillId, authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.getTeacherApiCourseBill']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.getApiTeacherApiCourseBill']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -332,10 +332,10 @@ export const CourseCourseBillApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTeacherApiCourseBills(page?: number, perPage?: number, status?: string, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<CourseCourseBill1>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getTeacherApiCourseBills(page, perPage, status, authorization, options);
+        async getApiTeacherApiCourseBills(page?: number, perPage?: number, status?: string, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<CourseCourseBill1>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiTeacherApiCourseBills(page, perPage, status, authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.getTeacherApiCourseBills']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.getApiTeacherApiCourseBills']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -343,14 +343,14 @@ export const CourseCourseBillApiFp = function(configuration?: Configuration) {
          * @summary 账单-账单管理-账单更新
          * @param {string} courseBillId 
          * @param {string} [authorization] 授权
-         * @param {PatchTeacherApiCourseBillRequest} [patchTeacherApiCourseBillRequest] 
+         * @param {PatchApiTeacherApiCourseBillRequest} [patchApiTeacherApiCourseBillRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async patchTeacherApiCourseBill(courseBillId: string, authorization?: string, patchTeacherApiCourseBillRequest?: PatchTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CourseCourseBill1>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.patchTeacherApiCourseBill(courseBillId, authorization, patchTeacherApiCourseBillRequest, options);
+        async patchApiTeacherApiCourseBill(courseBillId: string, authorization?: string, patchApiTeacherApiCourseBillRequest?: PatchApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CourseCourseBill1>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.patchApiTeacherApiCourseBill(courseBillId, authorization, patchApiTeacherApiCourseBillRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.patchTeacherApiCourseBill']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.patchApiTeacherApiCourseBill']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -362,24 +362,24 @@ export const CourseCourseBillApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async patchTeacherApiCourseBillSend(courseBillId: string, authorization?: string, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.patchTeacherApiCourseBillSend(courseBillId, authorization, body, options);
+        async patchApiTeacherApiCourseBillSend(courseBillId: string, authorization?: string, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.patchApiTeacherApiCourseBillSend(courseBillId, authorization, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.patchTeacherApiCourseBillSend']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.patchApiTeacherApiCourseBillSend']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary 账单-账单管理-账单添加
          * @param {string} [authorization] 授权
-         * @param {PatchTeacherApiCourseBillRequest} [patchTeacherApiCourseBillRequest] 
+         * @param {PatchApiTeacherApiCourseBillRequest} [patchApiTeacherApiCourseBillRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postTeacherApiCourseBills(authorization?: string, patchTeacherApiCourseBillRequest?: PatchTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CourseCourseBill1>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.postTeacherApiCourseBills(authorization, patchTeacherApiCourseBillRequest, options);
+        async postApiTeacherApiCourseBills(authorization?: string, patchApiTeacherApiCourseBillRequest?: PatchApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CourseCourseBill1>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.postApiTeacherApiCourseBills(authorization, patchApiTeacherApiCourseBillRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.postTeacherApiCourseBills']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CourseCourseBillApi.postApiTeacherApiCourseBills']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -395,218 +395,218 @@ export const CourseCourseBillApiFactory = function (configuration?: Configuratio
         /**
          * 
          * @summary 账单-账单管理-账单删除
-         * @param {CourseCourseBillApiDeleteTeacherApiCourseBillRequest} requestParameters Request parameters.
+         * @param {CourseCourseBillApiDeleteApiTeacherApiCourseBillRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteTeacherApiCourseBill(requestParameters: CourseCourseBillApiDeleteTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
-            return localVarFp.deleteTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(axios, basePath));
+        deleteApiTeacherApiCourseBill(requestParameters: CourseCourseBillApiDeleteApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
+            return localVarFp.deleteApiTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 账单-账单管理-账单详情
-         * @param {CourseCourseBillApiGetTeacherApiCourseBillRequest} requestParameters Request parameters.
+         * @param {CourseCourseBillApiGetApiTeacherApiCourseBillRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTeacherApiCourseBill(requestParameters: CourseCourseBillApiGetTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): AxiosPromise<CourseCourseBill1> {
-            return localVarFp.getTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(axios, basePath));
+        getApiTeacherApiCourseBill(requestParameters: CourseCourseBillApiGetApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): AxiosPromise<CourseCourseBill1> {
+            return localVarFp.getApiTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 账单-账单管理-账单列表
-         * @param {CourseCourseBillApiGetTeacherApiCourseBillsRequest} requestParameters Request parameters.
+         * @param {CourseCourseBillApiGetApiTeacherApiCourseBillsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTeacherApiCourseBills(requestParameters: CourseCourseBillApiGetTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<CourseCourseBill1>> {
-            return localVarFp.getTeacherApiCourseBills(requestParameters.page, requestParameters.perPage, requestParameters.status, requestParameters.authorization, options).then((request) => request(axios, basePath));
+        getApiTeacherApiCourseBills(requestParameters: CourseCourseBillApiGetApiTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<CourseCourseBill1>> {
+            return localVarFp.getApiTeacherApiCourseBills(requestParameters.page, requestParameters.perPage, requestParameters.status, requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 账单-账单管理-账单更新
-         * @param {CourseCourseBillApiPatchTeacherApiCourseBillRequest} requestParameters Request parameters.
+         * @param {CourseCourseBillApiPatchApiTeacherApiCourseBillRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchTeacherApiCourseBill(requestParameters: CourseCourseBillApiPatchTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): AxiosPromise<CourseCourseBill1> {
-            return localVarFp.patchTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, requestParameters.patchTeacherApiCourseBillRequest, options).then((request) => request(axios, basePath));
+        patchApiTeacherApiCourseBill(requestParameters: CourseCourseBillApiPatchApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig): AxiosPromise<CourseCourseBill1> {
+            return localVarFp.patchApiTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, requestParameters.patchApiTeacherApiCourseBillRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 账单-账单管理-发送账单
-         * @param {CourseCourseBillApiPatchTeacherApiCourseBillSendRequest} requestParameters Request parameters.
+         * @param {CourseCourseBillApiPatchApiTeacherApiCourseBillSendRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchTeacherApiCourseBillSend(requestParameters: CourseCourseBillApiPatchTeacherApiCourseBillSendRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
-            return localVarFp.patchTeacherApiCourseBillSend(requestParameters.courseBillId, requestParameters.authorization, requestParameters.body, options).then((request) => request(axios, basePath));
+        patchApiTeacherApiCourseBillSend(requestParameters: CourseCourseBillApiPatchApiTeacherApiCourseBillSendRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
+            return localVarFp.patchApiTeacherApiCourseBillSend(requestParameters.courseBillId, requestParameters.authorization, requestParameters.body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 账单-账单管理-账单添加
-         * @param {CourseCourseBillApiPostTeacherApiCourseBillsRequest} requestParameters Request parameters.
+         * @param {CourseCourseBillApiPostApiTeacherApiCourseBillsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postTeacherApiCourseBills(requestParameters: CourseCourseBillApiPostTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<CourseCourseBill1> {
-            return localVarFp.postTeacherApiCourseBills(requestParameters.authorization, requestParameters.patchTeacherApiCourseBillRequest, options).then((request) => request(axios, basePath));
+        postApiTeacherApiCourseBills(requestParameters: CourseCourseBillApiPostApiTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<CourseCourseBill1> {
+            return localVarFp.postApiTeacherApiCourseBills(requestParameters.authorization, requestParameters.patchApiTeacherApiCourseBillRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * Request parameters for deleteTeacherApiCourseBill operation in CourseCourseBillApi.
+ * Request parameters for deleteApiTeacherApiCourseBill operation in CourseCourseBillApi.
  * @export
- * @interface CourseCourseBillApiDeleteTeacherApiCourseBillRequest
+ * @interface CourseCourseBillApiDeleteApiTeacherApiCourseBillRequest
  */
-export interface CourseCourseBillApiDeleteTeacherApiCourseBillRequest {
+export interface CourseCourseBillApiDeleteApiTeacherApiCourseBillRequest {
     /**
      * 
      * @type {number}
-     * @memberof CourseCourseBillApiDeleteTeacherApiCourseBill
+     * @memberof CourseCourseBillApiDeleteApiTeacherApiCourseBill
      */
     readonly courseBillId: number
 
     /**
      * 授权
      * @type {string}
-     * @memberof CourseCourseBillApiDeleteTeacherApiCourseBill
+     * @memberof CourseCourseBillApiDeleteApiTeacherApiCourseBill
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for getTeacherApiCourseBill operation in CourseCourseBillApi.
+ * Request parameters for getApiTeacherApiCourseBill operation in CourseCourseBillApi.
  * @export
- * @interface CourseCourseBillApiGetTeacherApiCourseBillRequest
+ * @interface CourseCourseBillApiGetApiTeacherApiCourseBillRequest
  */
-export interface CourseCourseBillApiGetTeacherApiCourseBillRequest {
+export interface CourseCourseBillApiGetApiTeacherApiCourseBillRequest {
     /**
      * 
      * @type {number}
-     * @memberof CourseCourseBillApiGetTeacherApiCourseBill
+     * @memberof CourseCourseBillApiGetApiTeacherApiCourseBill
      */
     readonly courseBillId: number
 
     /**
      * 授权
      * @type {string}
-     * @memberof CourseCourseBillApiGetTeacherApiCourseBill
+     * @memberof CourseCourseBillApiGetApiTeacherApiCourseBill
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for getTeacherApiCourseBills operation in CourseCourseBillApi.
+ * Request parameters for getApiTeacherApiCourseBills operation in CourseCourseBillApi.
  * @export
- * @interface CourseCourseBillApiGetTeacherApiCourseBillsRequest
+ * @interface CourseCourseBillApiGetApiTeacherApiCourseBillsRequest
  */
-export interface CourseCourseBillApiGetTeacherApiCourseBillsRequest {
+export interface CourseCourseBillApiGetApiTeacherApiCourseBillsRequest {
     /**
      * 页数，默认1
      * @type {number}
-     * @memberof CourseCourseBillApiGetTeacherApiCourseBills
+     * @memberof CourseCourseBillApiGetApiTeacherApiCourseBills
      */
     readonly page?: number
 
     /**
      * 每页条数，默认15，最大200
      * @type {number}
-     * @memberof CourseCourseBillApiGetTeacherApiCourseBills
+     * @memberof CourseCourseBillApiGetApiTeacherApiCourseBills
      */
     readonly perPage?: number
 
     /**
      * 状态
      * @type {string}
-     * @memberof CourseCourseBillApiGetTeacherApiCourseBills
+     * @memberof CourseCourseBillApiGetApiTeacherApiCourseBills
      */
     readonly status?: string
 
     /**
      * 授权
      * @type {string}
-     * @memberof CourseCourseBillApiGetTeacherApiCourseBills
+     * @memberof CourseCourseBillApiGetApiTeacherApiCourseBills
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for patchTeacherApiCourseBill operation in CourseCourseBillApi.
+ * Request parameters for patchApiTeacherApiCourseBill operation in CourseCourseBillApi.
  * @export
- * @interface CourseCourseBillApiPatchTeacherApiCourseBillRequest
+ * @interface CourseCourseBillApiPatchApiTeacherApiCourseBillRequest
  */
-export interface CourseCourseBillApiPatchTeacherApiCourseBillRequest {
+export interface CourseCourseBillApiPatchApiTeacherApiCourseBillRequest {
     /**
      * 
      * @type {string}
-     * @memberof CourseCourseBillApiPatchTeacherApiCourseBill
+     * @memberof CourseCourseBillApiPatchApiTeacherApiCourseBill
      */
     readonly courseBillId: string
 
     /**
      * 授权
      * @type {string}
-     * @memberof CourseCourseBillApiPatchTeacherApiCourseBill
+     * @memberof CourseCourseBillApiPatchApiTeacherApiCourseBill
      */
     readonly authorization?: string
 
     /**
      * 
-     * @type {PatchTeacherApiCourseBillRequest}
-     * @memberof CourseCourseBillApiPatchTeacherApiCourseBill
+     * @type {PatchApiTeacherApiCourseBillRequest}
+     * @memberof CourseCourseBillApiPatchApiTeacherApiCourseBill
      */
-    readonly patchTeacherApiCourseBillRequest?: PatchTeacherApiCourseBillRequest
+    readonly patchApiTeacherApiCourseBillRequest?: PatchApiTeacherApiCourseBillRequest
 }
 
 /**
- * Request parameters for patchTeacherApiCourseBillSend operation in CourseCourseBillApi.
+ * Request parameters for patchApiTeacherApiCourseBillSend operation in CourseCourseBillApi.
  * @export
- * @interface CourseCourseBillApiPatchTeacherApiCourseBillSendRequest
+ * @interface CourseCourseBillApiPatchApiTeacherApiCourseBillSendRequest
  */
-export interface CourseCourseBillApiPatchTeacherApiCourseBillSendRequest {
+export interface CourseCourseBillApiPatchApiTeacherApiCourseBillSendRequest {
     /**
      * 
      * @type {string}
-     * @memberof CourseCourseBillApiPatchTeacherApiCourseBillSend
+     * @memberof CourseCourseBillApiPatchApiTeacherApiCourseBillSend
      */
     readonly courseBillId: string
 
     /**
      * 授权
      * @type {string}
-     * @memberof CourseCourseBillApiPatchTeacherApiCourseBillSend
+     * @memberof CourseCourseBillApiPatchApiTeacherApiCourseBillSend
      */
     readonly authorization?: string
 
     /**
      * 
      * @type {object}
-     * @memberof CourseCourseBillApiPatchTeacherApiCourseBillSend
+     * @memberof CourseCourseBillApiPatchApiTeacherApiCourseBillSend
      */
     readonly body?: object
 }
 
 /**
- * Request parameters for postTeacherApiCourseBills operation in CourseCourseBillApi.
+ * Request parameters for postApiTeacherApiCourseBills operation in CourseCourseBillApi.
  * @export
- * @interface CourseCourseBillApiPostTeacherApiCourseBillsRequest
+ * @interface CourseCourseBillApiPostApiTeacherApiCourseBillsRequest
  */
-export interface CourseCourseBillApiPostTeacherApiCourseBillsRequest {
+export interface CourseCourseBillApiPostApiTeacherApiCourseBillsRequest {
     /**
      * 授权
      * @type {string}
-     * @memberof CourseCourseBillApiPostTeacherApiCourseBills
+     * @memberof CourseCourseBillApiPostApiTeacherApiCourseBills
      */
     readonly authorization?: string
 
     /**
      * 
-     * @type {PatchTeacherApiCourseBillRequest}
-     * @memberof CourseCourseBillApiPostTeacherApiCourseBills
+     * @type {PatchApiTeacherApiCourseBillRequest}
+     * @memberof CourseCourseBillApiPostApiTeacherApiCourseBills
      */
-    readonly patchTeacherApiCourseBillRequest?: PatchTeacherApiCourseBillRequest
+    readonly patchApiTeacherApiCourseBillRequest?: PatchApiTeacherApiCourseBillRequest
 }
 
 /**
@@ -619,73 +619,73 @@ export class CourseCourseBillApi extends BaseAPI {
     /**
      * 
      * @summary 账单-账单管理-账单删除
-     * @param {CourseCourseBillApiDeleteTeacherApiCourseBillRequest} requestParameters Request parameters.
+     * @param {CourseCourseBillApiDeleteApiTeacherApiCourseBillRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CourseCourseBillApi
      */
-    public deleteTeacherApiCourseBill(requestParameters: CourseCourseBillApiDeleteTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig) {
-        return CourseCourseBillApiFp(this.configuration).deleteTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public deleteApiTeacherApiCourseBill(requestParameters: CourseCourseBillApiDeleteApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig) {
+        return CourseCourseBillApiFp(this.configuration).deleteApiTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 账单-账单管理-账单详情
-     * @param {CourseCourseBillApiGetTeacherApiCourseBillRequest} requestParameters Request parameters.
+     * @param {CourseCourseBillApiGetApiTeacherApiCourseBillRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CourseCourseBillApi
      */
-    public getTeacherApiCourseBill(requestParameters: CourseCourseBillApiGetTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig) {
-        return CourseCourseBillApiFp(this.configuration).getTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public getApiTeacherApiCourseBill(requestParameters: CourseCourseBillApiGetApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig) {
+        return CourseCourseBillApiFp(this.configuration).getApiTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 账单-账单管理-账单列表
-     * @param {CourseCourseBillApiGetTeacherApiCourseBillsRequest} requestParameters Request parameters.
+     * @param {CourseCourseBillApiGetApiTeacherApiCourseBillsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CourseCourseBillApi
      */
-    public getTeacherApiCourseBills(requestParameters: CourseCourseBillApiGetTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig) {
-        return CourseCourseBillApiFp(this.configuration).getTeacherApiCourseBills(requestParameters.page, requestParameters.perPage, requestParameters.status, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public getApiTeacherApiCourseBills(requestParameters: CourseCourseBillApiGetApiTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig) {
+        return CourseCourseBillApiFp(this.configuration).getApiTeacherApiCourseBills(requestParameters.page, requestParameters.perPage, requestParameters.status, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 账单-账单管理-账单更新
-     * @param {CourseCourseBillApiPatchTeacherApiCourseBillRequest} requestParameters Request parameters.
+     * @param {CourseCourseBillApiPatchApiTeacherApiCourseBillRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CourseCourseBillApi
      */
-    public patchTeacherApiCourseBill(requestParameters: CourseCourseBillApiPatchTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig) {
-        return CourseCourseBillApiFp(this.configuration).patchTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, requestParameters.patchTeacherApiCourseBillRequest, options).then((request) => request(this.axios, this.basePath));
+    public patchApiTeacherApiCourseBill(requestParameters: CourseCourseBillApiPatchApiTeacherApiCourseBillRequest, options?: RawAxiosRequestConfig) {
+        return CourseCourseBillApiFp(this.configuration).patchApiTeacherApiCourseBill(requestParameters.courseBillId, requestParameters.authorization, requestParameters.patchApiTeacherApiCourseBillRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 账单-账单管理-发送账单
-     * @param {CourseCourseBillApiPatchTeacherApiCourseBillSendRequest} requestParameters Request parameters.
+     * @param {CourseCourseBillApiPatchApiTeacherApiCourseBillSendRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CourseCourseBillApi
      */
-    public patchTeacherApiCourseBillSend(requestParameters: CourseCourseBillApiPatchTeacherApiCourseBillSendRequest, options?: RawAxiosRequestConfig) {
-        return CourseCourseBillApiFp(this.configuration).patchTeacherApiCourseBillSend(requestParameters.courseBillId, requestParameters.authorization, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    public patchApiTeacherApiCourseBillSend(requestParameters: CourseCourseBillApiPatchApiTeacherApiCourseBillSendRequest, options?: RawAxiosRequestConfig) {
+        return CourseCourseBillApiFp(this.configuration).patchApiTeacherApiCourseBillSend(requestParameters.courseBillId, requestParameters.authorization, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 账单-账单管理-账单添加
-     * @param {CourseCourseBillApiPostTeacherApiCourseBillsRequest} requestParameters Request parameters.
+     * @param {CourseCourseBillApiPostApiTeacherApiCourseBillsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CourseCourseBillApi
      */
-    public postTeacherApiCourseBills(requestParameters: CourseCourseBillApiPostTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig) {
-        return CourseCourseBillApiFp(this.configuration).postTeacherApiCourseBills(requestParameters.authorization, requestParameters.patchTeacherApiCourseBillRequest, options).then((request) => request(this.axios, this.basePath));
+    public postApiTeacherApiCourseBills(requestParameters: CourseCourseBillApiPostApiTeacherApiCourseBillsRequest = {}, options?: RawAxiosRequestConfig) {
+        return CourseCourseBillApiFp(this.configuration).postApiTeacherApiCourseBills(requestParameters.authorization, requestParameters.patchApiTeacherApiCourseBillRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

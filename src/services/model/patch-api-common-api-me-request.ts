@@ -17,26 +17,20 @@
 /**
  * 
  * @export
- * @interface UserUser1
+ * @interface PatchApiCommonApiMeRequest
  */
-export interface UserUser1 {
-    /**
-     * 用戶id
-     * @type {number}
-     * @memberof UserUser1
-     */
-    'id'?: number;
+export interface PatchApiCommonApiMeRequest {
     /**
      * 用户姓名
      * @type {string}
-     * @memberof UserUser1
+     * @memberof PatchApiCommonApiMeRequest
      */
-    'name'?: string;
+    'name'?: string | null;
     /**
-     * 创建时间
+     * 性别
      * @type {string}
-     * @memberof UserUser1
+     * @memberof PatchApiCommonApiMeRequest
      */
-    'create_time'?: string | null;
+    'sex'?: string | null;
 }
 

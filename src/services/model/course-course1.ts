@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { UserUser1 } from './user-user1';
 
 /**
  * 
@@ -58,10 +61,10 @@ export interface CourseCourse1 {
     'student_ids'?: Array<number>;
     /**
      * 
-     * @type {Array<object>}
+     * @type {Array<UserUser1>}
      * @memberof CourseCourse1
      */
-    'students'?: Array<object>;
+    'students'?: Array<UserUser1>;
     /**
      * 创建时间
      * @type {string}

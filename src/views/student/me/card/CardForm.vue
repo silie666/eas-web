@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import { $t } from "@/plugins/i18n-setup";
-import { CourseCourse, PostStudentApiMeCardsRequest } from "@/services";
+import { CourseCourse, PostApiStudentApiMeCardsRequest } from "@/services";
 
 const props = defineProps<{
   row?: CourseCourse;
 }>();
 
-const form = reactive<PostStudentApiMeCardsRequest>({
+const form = reactive<PostApiStudentApiMeCardsRequest>({
   brand_name: props?.row?.brand_name ?? "",
   number: props?.row?.number ?? "",
   expiration_date: props?.row?.expiration_date ?? ""

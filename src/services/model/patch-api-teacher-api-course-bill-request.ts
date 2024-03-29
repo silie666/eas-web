@@ -17,26 +17,14 @@
 /**
  * 
  * @export
- * @interface UserUser1
+ * @interface PatchApiTeacherApiCourseBillRequest
  */
-export interface UserUser1 {
+export interface PatchApiTeacherApiCourseBillRequest {
     /**
-     * 用戶id
-     * @type {number}
-     * @memberof UserUser1
+     * 课程IDs
+     * @type {Array<number>}
+     * @memberof PatchApiTeacherApiCourseBillRequest
      */
-    'id'?: number;
-    /**
-     * 用户姓名
-     * @type {string}
-     * @memberof UserUser1
-     */
-    'name'?: string;
-    /**
-     * 创建时间
-     * @type {string}
-     * @memberof UserUser1
-     */
-    'create_time'?: string | null;
+    'course_ids': Array<number>;
 }
 

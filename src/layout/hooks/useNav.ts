@@ -13,7 +13,7 @@ import { useUserStoreHook } from "@/store/modules/user";
 import { usePermissionStoreHook } from "@/store/modules/permission";
 import { getToken } from "@/utils/auth";
 import { delLogin } from "@/api/AccountService";
-import { AuthAuthApi, AuthAuthApiDeleteCommonApiLoginRequest, UserMeApi } from "@/services";
+import { AuthAuthApi, AuthAuthApiDeleteApiCommonApiLoginRequest, UserMeApi } from "@/services";
 import { BaseAPI } from "@/services/base";
 import Cookies from "js-cookie";
 import { auth } from "@/directives";
@@ -73,7 +73,7 @@ export function useNav() {
 
   /** 退出登录 */
   async function logout() {
-    await new AuthAuthApi().deleteCommonApiLogin({
+    await new AuthAuthApi().deleteApiCommonApiLogin({
       authorization: "Bearer " + getToken().accessToken
     });
     useUserStoreHook().logOut();

@@ -31,6 +31,17 @@ export default {
         showParent: true,
         roles: [Auth.GET_TEACHER_COURSE_BILLS]
       }
+    },
+    {
+      path: "/teacher/course-bills/detail/:courseBillId",
+      name: "BillDetail",
+      component: () => import("@/views/teacher/bill/BillDetail.vue"),
+      meta: {
+        showLink: false,
+        hiddenTag: true,
+        activePath: "/asset/search",
+        roles: [Auth.GET_TEACHER_COURSE_BILLS_BY_ID]
+      }
     }
   ]
 } as RouteConfigsTable;

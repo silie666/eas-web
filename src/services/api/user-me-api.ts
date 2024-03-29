@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { PatchCommonApiMeRequest } from '../model';
+import { PatchApiCommonApiMeRequest } from '../model';
 // @ts-ignore
-import { PostStudentApiMeCardsRequest } from '../model';
+import { PostApiStudentApiMeCardsRequest } from '../model';
 // @ts-ignore
 import { UserUser } from '../model';
 // @ts-ignore
@@ -45,10 +45,10 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteStudentApiMeCard: async (cardId: number, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteApiStudentApiMeCard: async (cardId: number, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'cardId' is not null or undefined
-            assertParamExists('deleteStudentApiMeCard', 'cardId', cardId)
-            const localVarPath = `/student-api/me-cards/{cardId}`
+            assertParamExists('deleteApiStudentApiMeCard', 'cardId', cardId)
+            const localVarPath = `/api/student-api/me-cards/{cardId}`
                 .replace(`{${"cardId"}}`, encodeURIComponent(String(cardId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -83,8 +83,8 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiMe: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/common-api/me`;
+        getApiCommonApiMe: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/common-api/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -118,8 +118,8 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiNodes: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/common-api/nodes`;
+        getApiCommonApiNodes: async (authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/common-api/nodes`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -157,8 +157,8 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStudentApiMeCards: async (page?: number, perPage?: number, number?: string, withAll?: string, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/student-api/me-cards`;
+        getApiStudentApiMeCards: async (page?: number, perPage?: number, number?: string, withAll?: string, authorization?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/student-api/me-cards`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -205,12 +205,12 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary 更新我的资料
          * @param {string} [authorization] 授权
-         * @param {PatchCommonApiMeRequest} [patchCommonApiMeRequest] 
+         * @param {PatchApiCommonApiMeRequest} [patchApiCommonApiMeRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchCommonApiMe: async (authorization?: string, patchCommonApiMeRequest?: PatchCommonApiMeRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/common-api/me`;
+        patchApiCommonApiMe: async (authorization?: string, patchApiCommonApiMeRequest?: PatchApiCommonApiMeRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/common-api/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -233,7 +233,7 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(patchCommonApiMeRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(patchApiCommonApiMeRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -245,14 +245,14 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary 更新信用卡
          * @param {string} cardId 
          * @param {string} [authorization] 授权
-         * @param {PostStudentApiMeCardsRequest} [postStudentApiMeCardsRequest] 
+         * @param {PostApiStudentApiMeCardsRequest} [postApiStudentApiMeCardsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchStudentApiMeCard: async (cardId: string, authorization?: string, postStudentApiMeCardsRequest?: PostStudentApiMeCardsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        patchApiStudentApiMeCard: async (cardId: string, authorization?: string, postApiStudentApiMeCardsRequest?: PostApiStudentApiMeCardsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'cardId' is not null or undefined
-            assertParamExists('patchStudentApiMeCard', 'cardId', cardId)
-            const localVarPath = `/student-api/me-cards/{cardId}`
+            assertParamExists('patchApiStudentApiMeCard', 'cardId', cardId)
+            const localVarPath = `/api/student-api/me-cards/{cardId}`
                 .replace(`{${"cardId"}}`, encodeURIComponent(String(cardId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -276,7 +276,7 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(postStudentApiMeCardsRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(postApiStudentApiMeCardsRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -287,12 +287,12 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary 创建信用卡
          * @param {string} [authorization] 授权
-         * @param {PostStudentApiMeCardsRequest} [postStudentApiMeCardsRequest] 
+         * @param {PostApiStudentApiMeCardsRequest} [postApiStudentApiMeCardsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postStudentApiMeCards: async (authorization?: string, postStudentApiMeCardsRequest?: PostStudentApiMeCardsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/student-api/me-cards`;
+        postApiStudentApiMeCards: async (authorization?: string, postApiStudentApiMeCardsRequest?: PostApiStudentApiMeCardsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/student-api/me-cards`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -315,7 +315,7 @@ export const UserMeApiAxiosParamCreator = function (configuration?: Configuratio
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(postStudentApiMeCardsRequest, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(postApiStudentApiMeCardsRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -340,10 +340,10 @@ export const UserMeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteStudentApiMeCard(cardId: number, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteStudentApiMeCard(cardId, authorization, options);
+        async deleteApiStudentApiMeCard(cardId: number, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteApiStudentApiMeCard(cardId, authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UserMeApi.deleteStudentApiMeCard']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UserMeApi.deleteApiStudentApiMeCard']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -353,10 +353,10 @@ export const UserMeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCommonApiMe(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserUser>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getCommonApiMe(authorization, options);
+        async getApiCommonApiMe(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserUser>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiCommonApiMe(authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UserMeApi.getCommonApiMe']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UserMeApi.getApiCommonApiMe']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -366,10 +366,10 @@ export const UserMeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCommonApiNodes(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<UserUserNode>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getCommonApiNodes(authorization, options);
+        async getApiCommonApiNodes(authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<UserUserNode>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiCommonApiNodes(authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UserMeApi.getCommonApiNodes']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UserMeApi.getApiCommonApiNodes']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -383,24 +383,24 @@ export const UserMeApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getStudentApiMeCards(page?: number, perPage?: number, number?: string, withAll?: string, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<UserUserCard>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getStudentApiMeCards(page, perPage, number, withAll, authorization, options);
+        async getApiStudentApiMeCards(page?: number, perPage?: number, number?: string, withAll?: string, authorization?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<UserUserCard>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApiStudentApiMeCards(page, perPage, number, withAll, authorization, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UserMeApi.getStudentApiMeCards']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UserMeApi.getApiStudentApiMeCards']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary 更新我的资料
          * @param {string} [authorization] 授权
-         * @param {PatchCommonApiMeRequest} [patchCommonApiMeRequest] 
+         * @param {PatchApiCommonApiMeRequest} [patchApiCommonApiMeRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async patchCommonApiMe(authorization?: string, patchCommonApiMeRequest?: PatchCommonApiMeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserUser>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.patchCommonApiMe(authorization, patchCommonApiMeRequest, options);
+        async patchApiCommonApiMe(authorization?: string, patchApiCommonApiMeRequest?: PatchApiCommonApiMeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserUser>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.patchApiCommonApiMe(authorization, patchApiCommonApiMeRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UserMeApi.patchCommonApiMe']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UserMeApi.patchApiCommonApiMe']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -408,28 +408,28 @@ export const UserMeApiFp = function(configuration?: Configuration) {
          * @summary 更新信用卡
          * @param {string} cardId 
          * @param {string} [authorization] 授权
-         * @param {PostStudentApiMeCardsRequest} [postStudentApiMeCardsRequest] 
+         * @param {PostApiStudentApiMeCardsRequest} [postApiStudentApiMeCardsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async patchStudentApiMeCard(cardId: string, authorization?: string, postStudentApiMeCardsRequest?: PostStudentApiMeCardsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.patchStudentApiMeCard(cardId, authorization, postStudentApiMeCardsRequest, options);
+        async patchApiStudentApiMeCard(cardId: string, authorization?: string, postApiStudentApiMeCardsRequest?: PostApiStudentApiMeCardsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.patchApiStudentApiMeCard(cardId, authorization, postApiStudentApiMeCardsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UserMeApi.patchStudentApiMeCard']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UserMeApi.patchApiStudentApiMeCard']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary 创建信用卡
          * @param {string} [authorization] 授权
-         * @param {PostStudentApiMeCardsRequest} [postStudentApiMeCardsRequest] 
+         * @param {PostApiStudentApiMeCardsRequest} [postApiStudentApiMeCardsRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postStudentApiMeCards(authorization?: string, postStudentApiMeCardsRequest?: PostStudentApiMeCardsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.postStudentApiMeCards(authorization, postStudentApiMeCardsRequest, options);
+        async postApiStudentApiMeCards(authorization?: string, postApiStudentApiMeCardsRequest?: PostApiStudentApiMeCardsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.postApiStudentApiMeCards(authorization, postApiStudentApiMeCardsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UserMeApi.postStudentApiMeCards']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UserMeApi.postApiStudentApiMeCards']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -445,235 +445,235 @@ export const UserMeApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary 删除信用卡
-         * @param {UserMeApiDeleteStudentApiMeCardRequest} requestParameters Request parameters.
+         * @param {UserMeApiDeleteApiStudentApiMeCardRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteStudentApiMeCard(requestParameters: UserMeApiDeleteStudentApiMeCardRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
-            return localVarFp.deleteStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, options).then((request) => request(axios, basePath));
+        deleteApiStudentApiMeCard(requestParameters: UserMeApiDeleteApiStudentApiMeCardRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
+            return localVarFp.deleteApiStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 我的资料
-         * @param {UserMeApiGetCommonApiMeRequest} requestParameters Request parameters.
+         * @param {UserMeApiGetApiCommonApiMeRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiMe(requestParameters: UserMeApiGetCommonApiMeRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<UserUser> {
-            return localVarFp.getCommonApiMe(requestParameters.authorization, options).then((request) => request(axios, basePath));
+        getApiCommonApiMe(requestParameters: UserMeApiGetApiCommonApiMeRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<UserUser> {
+            return localVarFp.getApiCommonApiMe(requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 我的节点列表
-         * @param {UserMeApiGetCommonApiNodesRequest} requestParameters Request parameters.
+         * @param {UserMeApiGetApiCommonApiNodesRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCommonApiNodes(requestParameters: UserMeApiGetCommonApiNodesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<UserUserNode>> {
-            return localVarFp.getCommonApiNodes(requestParameters.authorization, options).then((request) => request(axios, basePath));
+        getApiCommonApiNodes(requestParameters: UserMeApiGetApiCommonApiNodesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<UserUserNode>> {
+            return localVarFp.getApiCommonApiNodes(requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 信用卡列表
-         * @param {UserMeApiGetStudentApiMeCardsRequest} requestParameters Request parameters.
+         * @param {UserMeApiGetApiStudentApiMeCardsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getStudentApiMeCards(requestParameters: UserMeApiGetStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<UserUserCard>> {
-            return localVarFp.getStudentApiMeCards(requestParameters.page, requestParameters.perPage, requestParameters.number, requestParameters.withAll, requestParameters.authorization, options).then((request) => request(axios, basePath));
+        getApiStudentApiMeCards(requestParameters: UserMeApiGetApiStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Array<UserUserCard>> {
+            return localVarFp.getApiStudentApiMeCards(requestParameters.page, requestParameters.perPage, requestParameters.number, requestParameters.withAll, requestParameters.authorization, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 更新我的资料
-         * @param {UserMeApiPatchCommonApiMeRequest} requestParameters Request parameters.
+         * @param {UserMeApiPatchApiCommonApiMeRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchCommonApiMe(requestParameters: UserMeApiPatchCommonApiMeRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<UserUser> {
-            return localVarFp.patchCommonApiMe(requestParameters.authorization, requestParameters.patchCommonApiMeRequest, options).then((request) => request(axios, basePath));
+        patchApiCommonApiMe(requestParameters: UserMeApiPatchApiCommonApiMeRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<UserUser> {
+            return localVarFp.patchApiCommonApiMe(requestParameters.authorization, requestParameters.patchApiCommonApiMeRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 更新信用卡
-         * @param {UserMeApiPatchStudentApiMeCardRequest} requestParameters Request parameters.
+         * @param {UserMeApiPatchApiStudentApiMeCardRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        patchStudentApiMeCard(requestParameters: UserMeApiPatchStudentApiMeCardRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
-            return localVarFp.patchStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, requestParameters.postStudentApiMeCardsRequest, options).then((request) => request(axios, basePath));
+        patchApiStudentApiMeCard(requestParameters: UserMeApiPatchApiStudentApiMeCardRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
+            return localVarFp.patchApiStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, requestParameters.postApiStudentApiMeCardsRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary 创建信用卡
-         * @param {UserMeApiPostStudentApiMeCardsRequest} requestParameters Request parameters.
+         * @param {UserMeApiPostApiStudentApiMeCardsRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postStudentApiMeCards(requestParameters: UserMeApiPostStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<object> {
-            return localVarFp.postStudentApiMeCards(requestParameters.authorization, requestParameters.postStudentApiMeCardsRequest, options).then((request) => request(axios, basePath));
+        postApiStudentApiMeCards(requestParameters: UserMeApiPostApiStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<object> {
+            return localVarFp.postApiStudentApiMeCards(requestParameters.authorization, requestParameters.postApiStudentApiMeCardsRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * Request parameters for deleteStudentApiMeCard operation in UserMeApi.
+ * Request parameters for deleteApiStudentApiMeCard operation in UserMeApi.
  * @export
- * @interface UserMeApiDeleteStudentApiMeCardRequest
+ * @interface UserMeApiDeleteApiStudentApiMeCardRequest
  */
-export interface UserMeApiDeleteStudentApiMeCardRequest {
+export interface UserMeApiDeleteApiStudentApiMeCardRequest {
     /**
      * 
      * @type {number}
-     * @memberof UserMeApiDeleteStudentApiMeCard
+     * @memberof UserMeApiDeleteApiStudentApiMeCard
      */
     readonly cardId: number
 
     /**
      * 授权
      * @type {string}
-     * @memberof UserMeApiDeleteStudentApiMeCard
+     * @memberof UserMeApiDeleteApiStudentApiMeCard
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for getCommonApiMe operation in UserMeApi.
+ * Request parameters for getApiCommonApiMe operation in UserMeApi.
  * @export
- * @interface UserMeApiGetCommonApiMeRequest
+ * @interface UserMeApiGetApiCommonApiMeRequest
  */
-export interface UserMeApiGetCommonApiMeRequest {
+export interface UserMeApiGetApiCommonApiMeRequest {
     /**
      * 授权
      * @type {string}
-     * @memberof UserMeApiGetCommonApiMe
+     * @memberof UserMeApiGetApiCommonApiMe
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for getCommonApiNodes operation in UserMeApi.
+ * Request parameters for getApiCommonApiNodes operation in UserMeApi.
  * @export
- * @interface UserMeApiGetCommonApiNodesRequest
+ * @interface UserMeApiGetApiCommonApiNodesRequest
  */
-export interface UserMeApiGetCommonApiNodesRequest {
+export interface UserMeApiGetApiCommonApiNodesRequest {
     /**
      * 授权
      * @type {string}
-     * @memberof UserMeApiGetCommonApiNodes
+     * @memberof UserMeApiGetApiCommonApiNodes
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for getStudentApiMeCards operation in UserMeApi.
+ * Request parameters for getApiStudentApiMeCards operation in UserMeApi.
  * @export
- * @interface UserMeApiGetStudentApiMeCardsRequest
+ * @interface UserMeApiGetApiStudentApiMeCardsRequest
  */
-export interface UserMeApiGetStudentApiMeCardsRequest {
+export interface UserMeApiGetApiStudentApiMeCardsRequest {
     /**
      * 页数，默认1
      * @type {number}
-     * @memberof UserMeApiGetStudentApiMeCards
+     * @memberof UserMeApiGetApiStudentApiMeCards
      */
     readonly page?: number
 
     /**
      * 每页条数，默认15，最大200
      * @type {number}
-     * @memberof UserMeApiGetStudentApiMeCards
+     * @memberof UserMeApiGetApiStudentApiMeCards
      */
     readonly perPage?: number
 
     /**
      * 卡号
      * @type {string}
-     * @memberof UserMeApiGetStudentApiMeCards
+     * @memberof UserMeApiGetApiStudentApiMeCards
      */
     readonly number?: string
 
     /**
      * 获取所有数据
      * @type {string}
-     * @memberof UserMeApiGetStudentApiMeCards
+     * @memberof UserMeApiGetApiStudentApiMeCards
      */
     readonly withAll?: string
 
     /**
      * 授权
      * @type {string}
-     * @memberof UserMeApiGetStudentApiMeCards
+     * @memberof UserMeApiGetApiStudentApiMeCards
      */
     readonly authorization?: string
 }
 
 /**
- * Request parameters for patchCommonApiMe operation in UserMeApi.
+ * Request parameters for patchApiCommonApiMe operation in UserMeApi.
  * @export
- * @interface UserMeApiPatchCommonApiMeRequest
+ * @interface UserMeApiPatchApiCommonApiMeRequest
  */
-export interface UserMeApiPatchCommonApiMeRequest {
+export interface UserMeApiPatchApiCommonApiMeRequest {
     /**
      * 授权
      * @type {string}
-     * @memberof UserMeApiPatchCommonApiMe
+     * @memberof UserMeApiPatchApiCommonApiMe
      */
     readonly authorization?: string
 
     /**
      * 
-     * @type {PatchCommonApiMeRequest}
-     * @memberof UserMeApiPatchCommonApiMe
+     * @type {PatchApiCommonApiMeRequest}
+     * @memberof UserMeApiPatchApiCommonApiMe
      */
-    readonly patchCommonApiMeRequest?: PatchCommonApiMeRequest
+    readonly patchApiCommonApiMeRequest?: PatchApiCommonApiMeRequest
 }
 
 /**
- * Request parameters for patchStudentApiMeCard operation in UserMeApi.
+ * Request parameters for patchApiStudentApiMeCard operation in UserMeApi.
  * @export
- * @interface UserMeApiPatchStudentApiMeCardRequest
+ * @interface UserMeApiPatchApiStudentApiMeCardRequest
  */
-export interface UserMeApiPatchStudentApiMeCardRequest {
+export interface UserMeApiPatchApiStudentApiMeCardRequest {
     /**
      * 
      * @type {string}
-     * @memberof UserMeApiPatchStudentApiMeCard
+     * @memberof UserMeApiPatchApiStudentApiMeCard
      */
     readonly cardId: string
 
     /**
      * 授权
      * @type {string}
-     * @memberof UserMeApiPatchStudentApiMeCard
+     * @memberof UserMeApiPatchApiStudentApiMeCard
      */
     readonly authorization?: string
 
     /**
      * 
-     * @type {PostStudentApiMeCardsRequest}
-     * @memberof UserMeApiPatchStudentApiMeCard
+     * @type {PostApiStudentApiMeCardsRequest}
+     * @memberof UserMeApiPatchApiStudentApiMeCard
      */
-    readonly postStudentApiMeCardsRequest?: PostStudentApiMeCardsRequest
+    readonly postApiStudentApiMeCardsRequest?: PostApiStudentApiMeCardsRequest
 }
 
 /**
- * Request parameters for postStudentApiMeCards operation in UserMeApi.
+ * Request parameters for postApiStudentApiMeCards operation in UserMeApi.
  * @export
- * @interface UserMeApiPostStudentApiMeCardsRequest
+ * @interface UserMeApiPostApiStudentApiMeCardsRequest
  */
-export interface UserMeApiPostStudentApiMeCardsRequest {
+export interface UserMeApiPostApiStudentApiMeCardsRequest {
     /**
      * 授权
      * @type {string}
-     * @memberof UserMeApiPostStudentApiMeCards
+     * @memberof UserMeApiPostApiStudentApiMeCards
      */
     readonly authorization?: string
 
     /**
      * 
-     * @type {PostStudentApiMeCardsRequest}
-     * @memberof UserMeApiPostStudentApiMeCards
+     * @type {PostApiStudentApiMeCardsRequest}
+     * @memberof UserMeApiPostApiStudentApiMeCards
      */
-    readonly postStudentApiMeCardsRequest?: PostStudentApiMeCardsRequest
+    readonly postApiStudentApiMeCardsRequest?: PostApiStudentApiMeCardsRequest
 }
 
 /**
@@ -686,85 +686,85 @@ export class UserMeApi extends BaseAPI {
     /**
      * 
      * @summary 删除信用卡
-     * @param {UserMeApiDeleteStudentApiMeCardRequest} requestParameters Request parameters.
+     * @param {UserMeApiDeleteApiStudentApiMeCardRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserMeApi
      */
-    public deleteStudentApiMeCard(requestParameters: UserMeApiDeleteStudentApiMeCardRequest, options?: RawAxiosRequestConfig) {
-        return UserMeApiFp(this.configuration).deleteStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public deleteApiStudentApiMeCard(requestParameters: UserMeApiDeleteApiStudentApiMeCardRequest, options?: RawAxiosRequestConfig) {
+        return UserMeApiFp(this.configuration).deleteApiStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 我的资料
-     * @param {UserMeApiGetCommonApiMeRequest} requestParameters Request parameters.
+     * @param {UserMeApiGetApiCommonApiMeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserMeApi
      */
-    public getCommonApiMe(requestParameters: UserMeApiGetCommonApiMeRequest = {}, options?: RawAxiosRequestConfig) {
-        return UserMeApiFp(this.configuration).getCommonApiMe(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public getApiCommonApiMe(requestParameters: UserMeApiGetApiCommonApiMeRequest = {}, options?: RawAxiosRequestConfig) {
+        return UserMeApiFp(this.configuration).getApiCommonApiMe(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 我的节点列表
-     * @param {UserMeApiGetCommonApiNodesRequest} requestParameters Request parameters.
+     * @param {UserMeApiGetApiCommonApiNodesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserMeApi
      */
-    public getCommonApiNodes(requestParameters: UserMeApiGetCommonApiNodesRequest = {}, options?: RawAxiosRequestConfig) {
-        return UserMeApiFp(this.configuration).getCommonApiNodes(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public getApiCommonApiNodes(requestParameters: UserMeApiGetApiCommonApiNodesRequest = {}, options?: RawAxiosRequestConfig) {
+        return UserMeApiFp(this.configuration).getApiCommonApiNodes(requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 信用卡列表
-     * @param {UserMeApiGetStudentApiMeCardsRequest} requestParameters Request parameters.
+     * @param {UserMeApiGetApiStudentApiMeCardsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserMeApi
      */
-    public getStudentApiMeCards(requestParameters: UserMeApiGetStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig) {
-        return UserMeApiFp(this.configuration).getStudentApiMeCards(requestParameters.page, requestParameters.perPage, requestParameters.number, requestParameters.withAll, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
+    public getApiStudentApiMeCards(requestParameters: UserMeApiGetApiStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig) {
+        return UserMeApiFp(this.configuration).getApiStudentApiMeCards(requestParameters.page, requestParameters.perPage, requestParameters.number, requestParameters.withAll, requestParameters.authorization, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 更新我的资料
-     * @param {UserMeApiPatchCommonApiMeRequest} requestParameters Request parameters.
+     * @param {UserMeApiPatchApiCommonApiMeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserMeApi
      */
-    public patchCommonApiMe(requestParameters: UserMeApiPatchCommonApiMeRequest = {}, options?: RawAxiosRequestConfig) {
-        return UserMeApiFp(this.configuration).patchCommonApiMe(requestParameters.authorization, requestParameters.patchCommonApiMeRequest, options).then((request) => request(this.axios, this.basePath));
+    public patchApiCommonApiMe(requestParameters: UserMeApiPatchApiCommonApiMeRequest = {}, options?: RawAxiosRequestConfig) {
+        return UserMeApiFp(this.configuration).patchApiCommonApiMe(requestParameters.authorization, requestParameters.patchApiCommonApiMeRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 更新信用卡
-     * @param {UserMeApiPatchStudentApiMeCardRequest} requestParameters Request parameters.
+     * @param {UserMeApiPatchApiStudentApiMeCardRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserMeApi
      */
-    public patchStudentApiMeCard(requestParameters: UserMeApiPatchStudentApiMeCardRequest, options?: RawAxiosRequestConfig) {
-        return UserMeApiFp(this.configuration).patchStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, requestParameters.postStudentApiMeCardsRequest, options).then((request) => request(this.axios, this.basePath));
+    public patchApiStudentApiMeCard(requestParameters: UserMeApiPatchApiStudentApiMeCardRequest, options?: RawAxiosRequestConfig) {
+        return UserMeApiFp(this.configuration).patchApiStudentApiMeCard(requestParameters.cardId, requestParameters.authorization, requestParameters.postApiStudentApiMeCardsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary 创建信用卡
-     * @param {UserMeApiPostStudentApiMeCardsRequest} requestParameters Request parameters.
+     * @param {UserMeApiPostApiStudentApiMeCardsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserMeApi
      */
-    public postStudentApiMeCards(requestParameters: UserMeApiPostStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig) {
-        return UserMeApiFp(this.configuration).postStudentApiMeCards(requestParameters.authorization, requestParameters.postStudentApiMeCardsRequest, options).then((request) => request(this.axios, this.basePath));
+    public postApiStudentApiMeCards(requestParameters: UserMeApiPostApiStudentApiMeCardsRequest = {}, options?: RawAxiosRequestConfig) {
+        return UserMeApiFp(this.configuration).postApiStudentApiMeCards(requestParameters.authorization, requestParameters.postApiStudentApiMeCardsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

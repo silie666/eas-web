@@ -10,7 +10,7 @@ export const useBaseDataStore = defineStore("base-data", {
   }),
   actions: {
     async getUserData() {
-      const userResponse = await new UserMeApi().getCommonApiMe({});
+      const userResponse = await new UserMeApi().getApiCommonApiMe({});
       this.userData = userResponse.data;
     }
   },

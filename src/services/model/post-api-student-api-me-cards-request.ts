@@ -17,26 +17,26 @@
 /**
  * 
  * @export
- * @interface UserUser1
+ * @interface PostApiStudentApiMeCardsRequest
  */
-export interface UserUser1 {
+export interface PostApiStudentApiMeCardsRequest {
     /**
-     * 用戶id
-     * @type {number}
-     * @memberof UserUser1
-     */
-    'id'?: number;
-    /**
-     * 用户姓名
+     * 品牌名称
      * @type {string}
-     * @memberof UserUser1
+     * @memberof PostApiStudentApiMeCardsRequest
      */
-    'name'?: string;
+    'brand_name': string;
     /**
-     * 创建时间
+     * 卡号
      * @type {string}
-     * @memberof UserUser1
+     * @memberof PostApiStudentApiMeCardsRequest
      */
-    'create_time'?: string | null;
+    'number': string;
+    /**
+     * 过期时间
+     * @type {string}
+     * @memberof PostApiStudentApiMeCardsRequest
+     */
+    'expiration_date': string;
 }
 

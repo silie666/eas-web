@@ -1,7 +1,7 @@
 import { $t } from "@/plugins/i18n-setup";
 import { addDialog } from "@/components/ReDialog";
 import { h, ref } from "vue";
-import { CourseCourse, UserMeApi, UserMeApiGetStudentApiMeCardsRequest } from "@/services";
+import { CourseCourse, UserMeApi, UserMeApiGetApiStudentApiMeCardsRequest } from "@/services";
 import { useListHooks } from "@/views/hooks";
 import { ActionBtn } from "@/components/TyList/type";
 import { Auth } from "@/constants/back-api";
@@ -9,7 +9,7 @@ import { message } from "@/utils/message";
 import CardForm from "@/views/student/me/card/CardForm.vue";
 
 export function useCardList() {
-  const hook = useListHooks(new UserMeApi().getStudentApiMeCards);
+  const hook = useListHooks(new UserMeApi().getApiStudentApiMeCards);
   const { getTableData } = hook;
   const actionBtn: ActionBtn<CourseCourse> = {
     add: {
@@ -27,13 +27,13 @@ export function useCardList() {
     delete: {
       auth: Auth.DELETE_STUDENT_ME_CARDS_BY_ID,
       onConfirm({ id: cardId }) {
-        hook.handleDelete(new UserMeApi().deleteStudentApiMeCard, {
+        hook.handleDelete(new UserMeApi().deleteApiStudentApiMeCard, {
           cardId
         });
       }
     }
   };
-  const columns: TableColumnList<UserMeApiGetStudentApiMeCardsRequest> = [
+  const columns: TableColumnList<UserMeApiGetApiStudentApiMeCardsRequest> = [
     {
       label: $t("序号"),
       type: "index",
@@ -85,12 +85,12 @@ export function useCardList() {
             options.loading = true;
             try {
               row
-                ? await new UserMeApi().patchStudentApiMeCard({
+                ? await new UserMeApi().patchApiStudentApiMeCard({
                     cardId: row.id.toString(),
-                    postStudentApiMeCardsRequest: form
+                    postApiStudentApiMeCardsRequest: form
                   })
-                : await new UserMeApi().postStudentApiMeCards({
-                    postStudentApiMeCardsRequest: form
+                : await new UserMeApi().postApiStudentApiMeCards({
+                    postApiStudentApiMeCardsRequest: form
                   });
               message(`${title}成功`, {
                 type: "success"

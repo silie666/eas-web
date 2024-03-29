@@ -17,26 +17,26 @@
 /**
  * 
  * @export
- * @interface UserUser1
+ * @interface PostApiCommonApiLoginRequest
  */
-export interface UserUser1 {
+export interface PostApiCommonApiLoginRequest {
     /**
-     * 用戶id
+     * 用户
+     * @type {string}
+     * @memberof PostApiCommonApiLoginRequest
+     */
+    'username': string;
+    /**
+     * 密码
+     * @type {string}
+     * @memberof PostApiCommonApiLoginRequest
+     */
+    'password': string;
+    /**
+     * 登录平台
      * @type {number}
-     * @memberof UserUser1
+     * @memberof PostApiCommonApiLoginRequest
      */
-    'id'?: number;
-    /**
-     * 用户姓名
-     * @type {string}
-     * @memberof UserUser1
-     */
-    'name'?: string;
-    /**
-     * 创建时间
-     * @type {string}
-     * @memberof UserUser1
-     */
-    'create_time'?: string | null;
+    'guard_type': number;
 }
 

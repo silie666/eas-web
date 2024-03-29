@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import { $t } from "@/plugins/i18n-setup";
-import { CourseCourseBill, PatchStudentApiCourseBillPayRequest, UserMeApi } from "@/services";
+import { PatchApiStudentApiCourseBillPayRequest, UserMeApi } from "@/services";
 import TySelect from "@/components/TySelect/index.vue";
 import { useOptions } from "@/views/hooks";
 
-const form = reactive<PatchStudentApiCourseBillPayRequest>({
+const form = reactive<PatchApiStudentApiCourseBillPayRequest>({
   number: ""
 });
 
-const cardList = useOptions(() => new UserMeApi().getStudentApiMeCards({ withAll: true }), "number", "number");
+const cardList = useOptions(() => new UserMeApi().getApiStudentApiMeCards({ withAll: "true" }), "number", "number");
 const ruleFormRef = ref();
 defineExpose({ ruleFormRef, form });
 </script>

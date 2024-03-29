@@ -57,11 +57,11 @@ export type RefreshTokenResult = {
 
 /** 登录 */
 export const getLogin = (data?: object) => {
-  return http.request<UserResult>("post", "/common-api/login", { data });
+  return http.request<UserResult>("post", "/api/common-api/login", { data });
 };
 
 export const delLogin = () => {
-  return new AuthAuthApi().deleteCommonApiLogin();
+  return new AuthAuthApi().deleteApiCommonApiLogin();
 };
 
 /** 刷新token */
@@ -82,5 +82,5 @@ export type NodeResult = {
   uri?: string;
 };
 export const getNode = () => {
-  return new UserMeApi().getCommonApiNodes({});
+  return new UserMeApi().getApiCommonApiNodes({});
 };

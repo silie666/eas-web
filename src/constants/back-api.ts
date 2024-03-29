@@ -7,6 +7,7 @@ export enum Auth {
   PATCH_TEACHER_COURSE_BILLS_BY_ID = "PATCH api/teacher-api/course-bills/{courseBillId}",
   DELETE_TEACHER_COURSE_BILLS_BY_ID = "DELETE api/teacher-api/course-bills/{courseBillId}",
   GET_TEACHER_COURSE_BILLS = "GET api/teacher-api/course-bills",
+  GET_TEACHER_COURSE_BILLS_BY_ID = "GET api/teacher-api/course-bills/{courseBillId}",
   PATCH_TEACHER_COURSE_BILLS_BY_ID_SEND = "PATCH api/teacher-api/course-bills/{courseBillId}/send",
 
   GET_STUDENT_COURSES = "GET api/student-api/courses",

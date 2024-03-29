@@ -1,7 +1,7 @@
 import { $t } from "@/plugins/i18n-setup";
 import { addDialog } from "@/components/ReDialog";
 import { h, ref } from "vue";
-import { CourseCourseApi, CourseCourseApiGetTeacherApiCoursesRequest, CourseCourse } from "@/services";
+import { CourseCourseApi, CourseCourseApiGetApiTeacherApiCoursesRequest, CourseCourse } from "@/services";
 import { useListHooks } from "@/views/hooks";
 import { ActionBtn } from "@/components/TyList/type";
 import { Auth } from "@/constants/back-api";
@@ -9,7 +9,7 @@ import CourseForm from "@/views/teacher/course/CourseForm.vue";
 import { message } from "@/utils/message";
 
 export function useCourseList() {
-  const hook = useListHooks(new CourseCourseApi().getTeacherApiCourses);
+  const hook = useListHooks(new CourseCourseApi().getApiTeacherApiCourses);
   const { getTableData } = hook;
   const actionBtn: ActionBtn<CourseCourse> = {
     add: {
@@ -27,13 +27,13 @@ export function useCourseList() {
     delete: {
       auth: Auth.DELETE_TEACHER_COURSES_BY_ID,
       onConfirm({ id: courseId }) {
-        hook.handleDelete(new CourseCourseApi().deleteTeacherApiCourse, {
+        hook.handleDelete(new CourseCourseApi().deleteApiTeacherApiCourse, {
           courseId
         });
       }
     }
   };
-  const columns: TableColumnList<CourseCourseApiGetTeacherApiCoursesRequest> = [
+  const columns: TableColumnList<CourseCourseApiGetApiTeacherApiCoursesRequest> = [
     {
       label: $t("序号"),
       type: "index",
@@ -100,12 +100,12 @@ export function useCourseList() {
             options.loading = true;
             try {
               row
-                ? await new CourseCourseApi().patchTeacherApiCourse({
+                ? await new CourseCourseApi().patchApiTeacherApiCourse({
                     courseId: row.id.toString(),
-                    patchTeacherApiCourseRequest: form
+                    patchApiTeacherApiCourseRequest: form
                   })
-                : await new CourseCourseApi().postTeacherApiCourses({
-                    patchTeacherApiCourseRequest: form
+                : await new CourseCourseApi().postApiTeacherApiCourses({
+                    patchApiTeacherApiCourseRequest: form
                   });
               message(`${title}成功`, {
                 type: "success"

@@ -1,7 +1,12 @@
 import { $t } from "@/plugins/i18n-setup";
 import { addDialog } from "@/components/ReDialog";
 import { h, ref } from "vue";
-import { CourseCourseBillApi, CourseCourseBillApiGetTeacherApiCourseBillRequest, CourseCourseBill } from "@/services";
+import {
+  CourseCourseBillApi,
+  CourseCourseBillApiGetApiTeacherApiCourseBillRequest,
+  CourseCourseBill1
+} from "@/services";
+import { useRouter } from "vue-router";
 import { useListHooks } from "@/views/hooks";
 import { ActionBtn } from "@/components/TyList/type";
 import { Auth } from "@/constants/back-api";
@@ -10,13 +15,20 @@ import BillForm from "@/views/teacher/bill/BillForm.vue";
 import { ElMessageBox } from "element-plus";
 
 export function useBillList() {
-  const hook = useListHooks(new CourseCourseBillApi().getTeacherApiCourseBills);
+  const hook = useListHooks(new CourseCourseBillApi().getApiTeacherApiCourseBills);
   const { getTableData } = hook;
-  const actionBtn: ActionBtn<CourseCourseBill> = {
+  const { push } = useRouter();
+  const actionBtn: ActionBtn<CourseCourseBill1> = {
     add: {
       auth: Auth.POST_TEACHER_COURSE_BILLS,
       onClick() {
         openDialog();
+      }
+    },
+    detail: {
+      auth: Auth.GET_TEACHER_COURSE_BILLS_BY_ID,
+      onClick({ id: courseBillId }) {
+        push({ name: "BillDetail", params: { courseBillId } });
       }
     },
     edit: {
@@ -28,13 +40,13 @@ export function useBillList() {
     delete: {
       auth: Auth.DELETE_TEACHER_COURSE_BILLS_BY_ID,
       onConfirm({ id: courseBillId }) {
-        hook.handleDelete(new CourseCourseBillApi().deleteTeacherApiCourseBill, {
+        hook.handleDelete(new CourseCourseBillApi().deleteApiTeacherApiCourseBill, {
           courseBillId
         });
       }
     }
   };
-  const columns: TableColumnList<CourseCourseBillApiGetTeacherApiCourseBillRequest> = [
+  const columns: TableColumnList<CourseCourseBillApiGetApiTeacherApiCourseBillRequest> = [
     {
       label: $t("序号"),
       type: "index",
@@ -72,7 +84,7 @@ export function useBillList() {
     }
   ];
 
-  function onSend(row: CourseCourseBill) {
+  function onSend(row: CourseCourseBill1) {
     ElMessageBox.confirm(`确认要发送账单?`, "系统提示", {
       confirmButtonText: "确定",
       cancelButtonText: "取消",
@@ -81,7 +93,7 @@ export function useBillList() {
       draggable: true
     })
       .then(async () => {
-        await new CourseCourseBillApi().patchTeacherApiCourseBillSend({
+        await new CourseCourseBillApi().patchApiTeacherApiCourseBillSend({
           courseBillId: row.id.toString()
         });
         message($t("操作成功"), { type: "success" });
@@ -92,7 +104,7 @@ export function useBillList() {
       });
   }
 
-  function openDialog(title = $t("新增"), row?: CourseCourseBill) {
+  function openDialog(title = $t("新增"), row?: CourseCourseBill1) {
     const dialogRef = ref<InstanceType<typeof BillForm>>();
     addDialog({
       title: `${title}${$t("账单")}`,
@@ -111,12 +123,12 @@ export function useBillList() {
             options.loading = true;
             try {
               row
-                ? await new CourseCourseBillApi().patchTeacherApiCourseBill({
+                ? await new CourseCourseBillApi().patchApiTeacherApiCourseBill({
                     courseBillId: row.id.toString(),
-                    patchTeacherApiCourseBillRequest: form
+                    patchApiTeacherApiCourseBillRequest: form
                   })
-                : await new CourseCourseBillApi().postTeacherApiCourseBills({
-                    patchTeacherApiCourseBillRequest: form
+                : await new CourseCourseBillApi().postApiTeacherApiCourseBills({
+                    patchApiTeacherApiCourseBillRequest: form
                   });
               message(`${title}成功`, {
                 type: "success"

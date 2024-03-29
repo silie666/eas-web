@@ -1,10 +1,10 @@
 import { $t } from "@/plugins/i18n-setup";
-import { CourseCourseApi, CourseCourseApiGetStudentApiCoursesRequest } from "@/services";
+import { CourseCourseApi, CourseCourseApiGetApiStudentApiCoursesRequest } from "@/services";
 import { useListHooks } from "@/views/hooks";
 
 export function useCourseList() {
-  const hook = useListHooks(new CourseCourseApi().getStudentApiCourses);
-  const columns: TableColumnList<CourseCourseApiGetStudentApiCoursesRequest> = [
+  const hook = useListHooks(new CourseCourseApi().getApiStudentApiCourses);
+  const columns: TableColumnList<CourseCourseApiGetApiStudentApiCoursesRequest> = [
     {
       label: $t("序号"),
       type: "index",

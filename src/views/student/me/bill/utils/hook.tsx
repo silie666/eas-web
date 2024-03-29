@@ -1,6 +1,6 @@
 import { $t } from "@/plugins/i18n-setup";
 import { h, ref } from "vue";
-import { CourseCourseApiGetStudentApiCourseBillsRequest, CourseCourseApi, CourseCourseBill } from "@/services";
+import { CourseCourseApiGetApiStudentApiCourseBillsRequest, CourseCourseApi, CourseCourseBill } from "@/services";
 import { useListHooks } from "@/views/hooks";
 import { addDialog } from "@/components/ReDialog";
 import PayForm from "@/views/student/me/bill/PayForm.vue";
@@ -8,10 +8,10 @@ import { message } from "@/utils/message";
 import { useBaseDataStore } from "@/store/modules/baseData";
 
 export function useBillList() {
-  const hook = useListHooks(new CourseCourseApi().getStudentApiCourseBills);
+  const hook = useListHooks(new CourseCourseApi().getApiStudentApiCourseBills);
   const { getTableData } = hook;
   const { baseData } = useBaseDataStore();
-  const columns: TableColumnList<CourseCourseApiGetStudentApiCourseBillsRequest> = [
+  const columns: TableColumnList<CourseCourseApiGetApiStudentApiCourseBillsRequest> = [
     {
       label: $t("序号"),
       type: "index",
@@ -70,9 +70,9 @@ export function useBillList() {
             // 表单规则校验通过
             options.loading = true;
             try {
-              await new CourseCourseApi().patchStudentApiCourseBillPay({
+              await new CourseCourseApi().patchApiStudentApiCourseBillPay({
                 courseBillId: row.id.toString(),
-                patchStudentApiCourseBillPayRequest: form
+                patchApiStudentApiCourseBillPayRequest: form
               });
               message(`${$t("已发起支付，请等待结果")}`, {
                 type: "success"
